@@ -18,8 +18,23 @@ public class User {
 
    @Column(name = "email")
    private String email;
+//   @OneToOne
+   @OneToOne(optional = false, cascade = CascadeType.ALL)
+   private Car car;
 
-   public User() {}
+   public Car getCar() {
+      return car;
+   }
+
+   public User setCar(Car car) {
+      this.car = car;
+      return this; // метод возвращает объект — User,
+      // чтобы вызвать другие методы этого объекта в цепочке
+   }
+
+   public User() {
+
+   }
    
    public User(String firstName, String lastName, String email) {
       this.firstName = firstName;
