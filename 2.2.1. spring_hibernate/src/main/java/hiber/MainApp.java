@@ -52,12 +52,6 @@ public class MainApp {
         System.out.println("Car = [" + user.getCar() + "]");
         System.out.println();
 
-        try {
-            User UserNotFound = userService.getUserByCar("Ferrari", 900);
-        } catch (NoResultException e) {
-            System.out.println("User not found");
-        }
-
         context.close();
     }
 }
